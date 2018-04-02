@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+#include<fcntl.h>
+#include<ctype.h>
+
+int notExist(char target[20][20], char find[20], int x)
+{
+    int i;
+    for(i=0;i<x;i++){
+        if(strcmp(target[i],find)==0)
+            return 0;
+    }
+    return 1;
+}
+
+int main()
+{
+    int fd, size, i, flag, j=0, k=0, l=0, c=1, d=1;
+    char *tok, *opr, *spl;
+    char file[10];
+    char buffer[200]={""};
